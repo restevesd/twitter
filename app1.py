@@ -24,7 +24,7 @@ access_token = '384431766-SdZnMYaETCYPiI6NyogMtZSEZq95dAYqZyDNkWhU'
 access_token_secret = '5GD2CpP3Bt3ZvsCjiMV0LvkNnh5oBiJiEeJNW9lzdQ38o'
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
-p.set_options(p.OPT.URL, p.OPT.RESERVED,p.OPT.NUMBER,p.OPT.MENTION)
+#p.set_options(p.OPT.URL, p.OPT.RESERVED,p.OPT.NUMBER,p.OPT.MENTION)
 
 #Create the authentication object
 authenticate = tweepy.OAuthHandler(consumer_key, consumer_secret) 
@@ -59,7 +59,8 @@ def app():
             l=[]
             i=1
             for tweet in posts:
-                l.append(p.clean(tweet.full_text))
+                #l.append(p.clean(tweet.full_text))
+                l.append(tweet.full_text)
                 i= i+1
             
             return l
