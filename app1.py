@@ -46,7 +46,7 @@ def app():
         st.success("Analizando los últimos 100 tweets del 2021")
         
         def datos_usuario(raw_text):
-            datos = api.get_user(raw_text) 
+            datos = api.get_user("restevesd") 
             st.write("Nombre: ",datos.name)
             st.write("Descripción: ",datos.description)    
             st.write("Seguidores:", datos.followers_count)
