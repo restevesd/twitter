@@ -6,6 +6,9 @@ import pandas as pd
 import preprocessor as p
 import nltk
 from nltk.tokenize import word_tokenize
+import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
+from PIL import Image
 
 nltk.download('vader_lexicon')
 nltk.download('punkt')
@@ -31,8 +34,6 @@ authenticate.set_access_token(access_token, access_token_secret)
     
 # Creating the API object while passing in auth information
 api = tweepy.API(authenticate, wait_on_rate_limit = True)
-
-plt.style.use('fivethirtyeight')
 
     
 def app():
@@ -78,7 +79,7 @@ def app():
             df = pd.DataFrame([tweet for tweet in recent_tweets], columns=['Tweets'])
 			# word cloud visualization
             allWords = ' '.join([twts for twts in df['Tweets']])
-            wordCloud = WordCloud(width=500, height=300, random_state=21, max_font_size=110,stopwords=stop).generate(allWords)
+            wordCloud = WordCloud(width=700, height=500, random_state=21, max_font_size=110,stopwords=stop).generate(allWords)
             plt.imshow(wordCloud, interpolation="bilinear")
             plt.axis('off')
             plt.savefig('WC.jpg')
@@ -86,7 +87,7 @@ def app():
             return img
         
         img=gen_wordcloud()
-        st.image(img)
+        st.image(img,width=700)
         
 
 
