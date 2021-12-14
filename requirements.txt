@@ -3,6 +3,5 @@ tweepy
 textblob
 wordcloud
 pandas
-re
 preprocessor
 nltk
