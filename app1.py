@@ -53,7 +53,7 @@ def app():
             
         def Show_Recent_Tweets(raw_text):
             # Extract 3200 tweets from the twitter user 
-            posts = api.user_timeline(screen_name=raw_text, count =100 , lang ="es", tweet_mode="extended")
+            posts = api.user_timeline(screen_name=raw_text, count =100 , tweet_mode="extended")
 
             
             l=[]
