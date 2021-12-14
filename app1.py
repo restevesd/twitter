@@ -42,6 +42,7 @@ def app():
     raw_text = st.text_area("Escribe tu nombre de usuario (sin la @)")
 
     if st.button("Analizar"):
+        print(raw_text)
         st.success("Analizando los últimos 100 tweets del 2021")
         
         def datos_usuario(raw_text):
